@@ -1,0 +1,57 @@
+{
+  "name": "graphql-fi",
+  "version": "1.0.0",
+  "engines": {
+    "node": "7.4.0"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js --watch src --exec babel-node",
+    "lint": "eslint src",
+    "test": "mocha --compilers js:babel-core/register --reporter spec --full-trace 'src/**/*.test.js' && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovaris/graphql-fi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ovaris/graphql-fi/issues"
+  },
+  "homepage": "https://github.com/ovaris/graphql-fi#readme",
+  "devDependencies": {
+    "babel-cli": "6.18.0",
+    "babel-core": "6.21.0",
+    "babel-eslint": "7.1.1",
+    "babel-preset-es2015": "6.18.0",
+    "babel-preset-react": "6.16.0",
+    "babel-preset-stage-2": "6.18.0",
+    "babel-register": "6.18.0",
+    "chai": "3.5.0",
+    "eslint": "3.13.1",
+    "eslint-config-airbnb": "14.0.0",
+    "eslint-plugin-babel": "4.0.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "3.0.2",
+    "eslint-plugin-react": "6.9.0",
+    "mocha": "3.2.0",
+    "nodemon": "1.11.0"
+  },
+  "dependencies": {
+    "axios": "0.15.3",
+    "body-parser": "1.15.2",
+    "dataloader": "1.2.0",
+    "dotenv": "4.0.0",
+    "express": "4.14.0",
+    "express-session": "1.14.2",
+    "extractgql": "0.2.1",
+    "graphql": "0.8.2",
+    "graphql-server-express": "0.5.0",
+    "graphql-tools": "0.9.0",
+    "lodash": "4.17.4",
+    "passport": "0.3.2"
+  }
+}
