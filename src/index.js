@@ -8,7 +8,7 @@ import schema from "./schemas";
 import { cameraData } from "./schemas/digitraffic/models";
 import digitrafficConnector from "./schemas/digitraffic/connector";
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
