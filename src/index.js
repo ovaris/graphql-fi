@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import express from "express";
 import bodyParser from "body-parser";
 import {
@@ -28,4 +29,6 @@ app.use("/graphiql", graphiqlExpress({
   endpointURL: "/graphql",
 }));
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log("Server started, listening port ", PORT); // eslint-disable-line no-console
+});
