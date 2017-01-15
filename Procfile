@@ -1,1 +1,1 @@
-web: nodemon src/index.js --watch src --exec babel-node
+web: node build/src/index.js
