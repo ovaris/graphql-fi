@@ -28,7 +28,7 @@ const rootResolvers = {
 const resolvers = merge(rootResolvers, digitrafficResolvers);
 
 export default makeExecutableSchema({
-  allowUndefinedInResolve: false,
+  allowUndefinedInResolve: process.env.NODE_ENV === "production",
   typeDefs: [SchemaDefinition, RootQuery, Digitraffic],
   resolvers,
 });

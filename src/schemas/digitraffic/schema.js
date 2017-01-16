@@ -16,14 +16,14 @@ const digitrafficSchema = `
     cameraStations: [CameraStation]
   }
   type Digitraffic {
-    cameraData: CameraData
+    cameraData(lastUpdated: Boolean = false): CameraData
   }
 `;
 
 export const resolvers = {
   Digitraffic: {
-    cameraData(root, args, context) {
-      return context.digitraffic.camera.getData();
+    cameraData(root, { lastUpdated }, context) {
+      return context.digitraffic.camera.getData(lastUpdated);
     },
   },
 };

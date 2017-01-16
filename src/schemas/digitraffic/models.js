@@ -1,3 +1,3 @@
 export const cameraData = connector => ({
-  getData: () => connector.cameraData(),
+  getData: (lastUpdated = false) => connector.cameraData(lastUpdated),
 });
