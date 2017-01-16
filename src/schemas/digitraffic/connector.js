@@ -5,11 +5,14 @@ const request = axios.create({
 });
 
 export default {
-  cameraData: async(lastUpdated) => {
-    const response = await request.get("/data/camera-data", {
+  cameraData: async (lastUpdated, cameraId) => {
+    const base = "/data/camera-data";
+    const url = cameraId ?
+      `${base}/${cameraId}` : base;
+    const response = await request.get(url, {
       params: {
-        lastUpdated
-      }
+        lastUpdated,
+      },
     });
     return response.data;
   },

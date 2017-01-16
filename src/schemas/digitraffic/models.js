@@ -1,3 +1,4 @@
-export const cameraData = connector => ({
-  getData: (lastUpdated = false) => connector.cameraData(lastUpdated),
+export const cameraData = (connector) => ({
+  cameraData: (lastUpdated, cameraId) =>
+    connector.cameraData(lastUpdated, cameraId),
 });
