@@ -16,7 +16,13 @@ const digitrafficSchema = `
     cameraStations: [CameraStation]
   }
   type Digitraffic {
-    cameraData(lastUpdated: Boolean = false, cameraId: ID): CameraData
+    # Current data of camera(s)
+    cameraData(
+      # If parameter is given result will only contain update status. Default false.
+      lastUpdated: Boolean = false,
+      # Optional Id of camera
+      cameraId: ID
+    ): CameraData
   }
 `;
 
