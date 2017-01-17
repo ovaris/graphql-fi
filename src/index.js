@@ -6,19 +6,20 @@ import {
   graphiqlExpress,
 } from "graphql-server-express";
 import schema from "./schemas";
-import { cameraData } from "./schemas/digitraffic/models";
+import { cameraModel, fluencyModel } from "./schemas/digitraffic/models";
 import digitrafficConnector from "./schemas/digitraffic/connector";
 
 const PORT = process.env.PORT || 3000;
-
 const app = express();
+
 
 app.use("/graphql", bodyParser.json(), graphqlExpress(() => {
   return {
     schema,
     context: {
       digitraffic: {
-        camera: cameraData(digitrafficConnector),
+        camera: cameraModel(digitrafficConnector),
+        fluency: fluencyModel(digitrafficConnector),
       },
     },
 
