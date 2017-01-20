@@ -1,4 +1,4 @@
-# graphql-fi
+# graphql.fi
 GraphQL-server for Finnish open data WIP
 
 ## Available APIs:
