@@ -9,6 +9,8 @@ import cors from "cors";
 import schema from "./schemas";
 import { cameraModel, fluencyModel } from "./schemas/digitraffic/models";
 import digitrafficConnector from "./schemas/digitraffic/connector";
+import { facilityModel } from "./schemas/hsl/models";
+import hslConnector from "./schemas/hsl/connector";
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -21,6 +23,9 @@ app.use("/graphql", cors(), bodyParser.json(), graphqlExpress(() => {
       digitraffic: {
         camera: cameraModel(digitrafficConnector),
         fluency: fluencyModel(digitrafficConnector),
+      },
+      hslParkAndRide: {
+        facility: facilityModel(hslConnector),
       },
     },
 
